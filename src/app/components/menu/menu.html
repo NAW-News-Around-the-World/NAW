@@ -1,0 +1,14 @@
+<!-- Menu Navigation -->
+<div class="menu">
+  <button class="menu-toggle" type="button" aria-label="Toggle menu" (click)="toggleMenu()">
+    ☰
+  </button>
+  <ul [class.active]="isMenuOpen">
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Inicio</a>
+    </li>
+    <li>
+      <a routerLink="/home/es" routerLinkActive="active">Noticias en Español</a>
+    </li>
+  </ul>
+</div>
