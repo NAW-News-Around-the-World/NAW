@@ -1,22 +1,21 @@
-@defer () {
 <section class="featured" *ngIf="featuredEs().length > 0">
-  <h2>📰 Destacados (España)</h2>
+  <h2>📰 Noticias Destacadas</h2>
   <div class="featured-container">
     <div *ngFor="let article of featuredEs()" class="featured-article">
       <img [src]="article.urlToImage" alt="Noticia destacada" />
       <div class="featured-content">
         <h3>{{ article.title }}</h3>
         <p>{{ article.description }}</p>
-        <a [href]="article.url" target="_blank" rel="noopener noreferrer"> Leer más </a>
+        <a [href]="article.url" target="_blank" rel="noopener noreferrer">Leer noticia completa</a>
       </div>
     </div>
   </div>
 </section>
-
+@defer () {
 <main>
-  <h2>🇪🇸 Últimas Noticias</h2>
+  <h2>Últimas Noticias</h2>
   <div class="article-container">
-    <div *ngFor="let article of newsEs()" class="article">
+    <div *ngFor="let article of generalEs()" class="article">
       <img [src]="article.urlToImage" alt="Imagen del articulo" />
       <h2>{{ article.title }}</h2>
       <p>{{ article.content }}</p>
@@ -27,8 +26,9 @@
       </div>
     </div>
   </div>
-    <button (click)="loadMore()" *ngIf="pageSize() < allNews.length" class="load-more">More</button>
+  <button (click)="loadMore()" *ngIf="pageSize() < allNews.length" class="load-more">Cargar más</button>
 </main>
 } @error {
-<p>Error al cargar las noticias.</p>
+  <p>Error al cargar las noticias.</p>
 }
+

@@ -32,6 +32,6 @@ export class Home implements OnInit {
   loadMore() {
     this.pageSize.update((size) => size + 12);
     this.news.set(this.allNews.slice(0, this.pageSize()));
-    console.log('Noticias cargadas:', this.pageSize());
+    console.log('Loaded news:', this.pageSize());
   }
 }

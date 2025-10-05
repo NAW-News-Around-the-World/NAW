@@ -12,13 +12,14 @@ import { UserService } from '../../../services/new.service';
 export class Es implements OnInit {
   allNews: any[] = [];
   newsEs = signal<any[]>([]);
-  pageSize = signal(12);
+  pageSize = signal(13);
 
   featuredEs = computed(() => this.newsEs().slice(0, 4));
   generalEs = computed(() => this.newsEs().slice(4, this.pageSize()));
 
   constructor(private userService: UserService) {
     effect(() => {
+      this.allNews = this.userService.newsEs();
       this.newsEs.set(this.userService.newsEs());
     });
   }
@@ -29,6 +30,7 @@ export class Es implements OnInit {
 
   loadMore() {
     this.pageSize.update((size) => size + 12);
+    this.newsEs.set(this.userService.newsEs().slice(0, this.pageSize()));
     console.log('Noticias ES cargadas:', this.pageSize());
   }
 }
