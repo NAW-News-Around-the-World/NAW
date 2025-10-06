@@ -5,11 +5,11 @@ import { DarkMode } from '../context/theme/dark-mode/dark-mode';
 
 @Component({
   selector: 'app-menu',
-  imports: [RouterLink],
+  imports: [RouterLink, DarkMode],
   standalone: true,
   providers: [],
   templateUrl: './menu.html',
-  styleUrl: './menu.scss',
+  styleUrl: '../../app.scss',
 })
 export class Menu {
   isMenuOpen = false;

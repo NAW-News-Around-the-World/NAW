@@ -7,7 +7,7 @@ import { UserService } from '../../../services/new.service';
   standalone: true,
   imports: [NgForOf, NgIf, DatePipe],
   templateUrl: './es.html',
-  styleUrl: './es.scss',
+  styleUrls: ['../home.scss', '../../../app.scss'],
 })
 export class Es implements OnInit {
   allNews: any[] = [];

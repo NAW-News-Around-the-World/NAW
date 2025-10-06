@@ -1,172 +1,345 @@
-/* Global Styles */
+/* =============================================== */
+/* 1. VARIABLES Y ESTILOS GLOBALES                 */
+/* =============================================== */
+
+:root {
+  /* Paleta de Colores (Modo Claro) */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff; /* Para fondos de tarjetas, header, etc. */
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-text-subtle: #333333;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-border: #cccccc;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-hover: rgba(0, 0, 0, 0.15);
+
+  /* Tipografía */
+  --font-serif: 'Times New Roman', 'Georgia', serif;
+  --font-sans: 'Helvetica', 'Arial', sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Times New Roman', 'Georgia', serif;
-  background-color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: #000000;
-  line-height: 1.6;
-  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Times New Roman', 'Georgia', serif;
+/* =============================================== */
+/* 2. TIPOGRAFÍA BASE                              */
+/* =============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
   margin: 0 0 1rem 0;
-  color: #000000;
+  color: var(--color-text);
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 2.25rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.75rem;
-  font-weight: 500;
-}
+h1 { font-size: 3rem; font-weight: 700; }
+h2 { font-size: 2.25rem; font-weight: 600; }
+h3 { font-size: 1.75rem; font-weight: 500; }
 
 p {
+  font-family: var(--font-sans);
+  color: var(--color-text-subtle);
   margin: 0 0 1rem 0;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: #333333;
 }
 
 a {
-  color: #000000;
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #666666;
+  color: var(--color-text-muted);
   text-decoration: underline;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* =============================================== */
+/* 3. ELEMENTOS REUTILIZABLES (Botones, Contenedores) */
+/* =============================================== */
 
-.btn:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.btn-secondary {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
-}
-
-.btn-secondary:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .container {
-    padding: 0 0.5rem;
-  }
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
+.btn:hover {
+  background-color: var(--color-on-primary);
+  color: var(--color-primary);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: 0 1px 3px var(--color-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 3px 10px var(--color-shadow-hover);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* =============================================== */
+/* 4. COMPONENTES (Header, Menu, Main, Footer)     */
+/* =============================================== */
+
+/* --- Header --- */
 .header {
   text-align: center;
   padding: 3rem 1rem;
-  background: #ffffff;
-  color: #000000;
-  border-bottom: 1px solid #cccccc;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
-
-.header h1 {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
 .header .tagline {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 400;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: #666666;
-  text-align: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
 }
 
-.header-content {
+/* --- Menu --- */
+.menu {
+  background: var(--color-surface);
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+.menu ul {
+  margin: 0 auto;
+  padding: 0;
   display: flex;
-  align-items: center;
+  list-style: none;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  max-width: 1200px;
+}
+.menu li { margin: 0 1.5rem; }
+.menu a {
+  display: block;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-text);
+  transition: width 0.3s ease;
+}
+.menu a:hover::after, .menu a.active::after { width: 100%; }
+.menu a.active { font-weight: 700; }
+.menu-toggle { display: none; /* Estilos mobile abajo */ }
+
+/* --- Main Content / Home --- */
+main, .featured {
+  padding: 3rem 1rem;
+  background: var(--color-bg);
+}
+.featured {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.featured h2, main h2 { text-align: center; }
+.featured-container, .article-container {
+  display: grid;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
+.featured-container { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+.article-container { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
 
-.header-text {
-  text-align: left;
+.article, .featured-article {
+  /* Heredan de .card */
+  display: flex;
+  flex-direction: column;
+}
+.article img { height: 200px; }
+.featured-article img { height: 250px; }
+.article .content, .featured-content { padding: 1.5rem; flex-grow: 1; }
+.article .content h3, .featured-content h3 { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem; }
+.article .meta {
+  margin: 0 1.5rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
+.load-more.btn { display: block; margin: 2rem auto; }
+
+/* --- Footer --- */
+.footer {
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 3rem 1rem 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.footer-left, .footer-center, .footer-right { flex: 1 1 250px; margin: 1rem; }
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin-bottom: 0.75rem; }
+.social-icons { display: flex; gap: 1rem; }
+.social-icons a {
+  font-size: 1.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
+.footer-bottom p { margin: 0; }
+
+/* =============================================== */
+/* 5. RESPONSIVE DESIGN (Media Queries)            */
+/* =============================================== */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  .container { padding: 0 0.5rem; }
+
+  /* Menu Mobile */
+  .menu ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .menu ul.active { transform: translateY(0); opacity: 1; visibility: visible; }
+  .menu li { margin: 0; width: 100%; border-bottom: 1px solid var(--color-border); }
+  .menu a { padding: 1rem; text-align: center; }
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Home Mobile */
+  .featured-container, .article-container { grid-template-columns: 1fr; }
+
+  /* Footer Mobile */
+  .footer-content { flex-direction: column; text-align: center; }
+  .social-icons { justify-content: center; }
 }
 
-/* Responsive for header */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+/* =============================================== */
+/* 🌙 Dark Mode                                  */
+/* =============================================== */
 
-  .logo {
-    width: 60px;
-    height: 60px;
-  }
+body.dark-mode {
+  /* 1. Redefinimos la paleta de colores */
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-text: #f1f1f1;
+  --color-text-muted: #bbbbbb;
+  --color-text-subtle: #cccccc;
+  --color-primary: #f1f1f1;
+  --color-on-primary: #000000;
+  --color-border: #333333;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-hover: rgba(0, 0, 0, 0.3);
+}
 
-  .header h1 {
-    font-size: 2.5rem;
-  }
+/* 2. Pequeños ajustes específicos que las variables no cubren */
+body.dark-mode a {
+  color: #9ad0ff; /* Un azul claro para enlaces mejora la legibilidad */
+}
+body.dark-mode a:hover {
+  color: #d2eaff;
+}
 
-  .header .tagline {
-    font-size: 1rem;
-  }
+body.dark-mode .social-icons a {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+body.dark-mode .social-icons a:hover {
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+
+body.dark-mode .menu a {
+  color: var(--color-text); /* Aseguramos que los links del menú también cambien */
+}
+
+body.dark-mode .menu a:hover,
+body.dark-mode .menu a.active {
+  color: var(--color-text-muted);
+}
+
+.mat-icon {
+  color: var(--color-text);
 }
