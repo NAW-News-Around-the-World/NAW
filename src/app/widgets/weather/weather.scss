@@ -1,0 +1,116 @@
+#weather-section {
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  max-width: 450px;
+  box-shadow: 0 2px 6px var(--color-shadow);
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#weather-section:hover {
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
+}
+
+#weather-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 70%;
+  min-width: 180px;
+}
+
+#form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-shadow);
+}
+
+#btn-weather-search {
+  margin-left: 10px;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-weather-search:hover {
+  background-color: var(--color-on-primary);
+  color: var(--color-primary);
+}
+
+/* --- Información del tiempo --- */
+#weather-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  box-shadow: 0 1px 3px var(--color-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-info h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.weather-info p {
+  font-family: var(--font-sans);
+  color: var(--color-text-subtle);
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+#weather-info {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInWeather 0.5s ease forwards;
+}
+
+@keyframes fadeInWeather {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Dark Mode --- */
+body.dark-mode #weather-section {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: 0 2px 6px var(--color-shadow);
+}
+
+body.dark-mode #form-control {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+body.dark-mode #weather-info {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}

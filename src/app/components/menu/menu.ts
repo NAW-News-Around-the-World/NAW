@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DarkMode } from '../context/theme/dark-mode/dark-mode';
+import { WeatherComponent } from '../../widgets/weather/weather.component';
 
 @Component({
   selector: 'app-menu',

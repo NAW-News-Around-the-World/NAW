@@ -1,9 +1,4 @@
-/* =============================================== */
-/* 1. VARIABLES Y ESTILOS GLOBALES                 */
-/* =============================================== */
-
 :root {
-  /* Paleta de Colores (Modo Claro) */
   --color-bg: #ffffff;
   --color-surface: #ffffff; /* Para fondos de tarjetas, header, etc. */
   --color-text: #000000;
@@ -14,10 +9,9 @@
   --color-border: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-hover: rgba(0, 0, 0, 0.15);
-
-  /* Tipografía */
   --font-serif: 'Times New Roman', 'Georgia', serif;
   --font-sans: 'Helvetica', 'Arial', sans-serif;
+
 }
 
 * {
@@ -34,10 +28,6 @@ body {
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* =============================================== */
-/* 2. TIPOGRAFÍA BASE                              */
-/* =============================================== */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
@@ -67,10 +57,6 @@ a:hover {
   color: var(--color-text-muted);
   text-decoration: underline;
 }
-
-/* =============================================== */
-/* 3. ELEMENTOS REUTILIZABLES (Botones, Contenedores) */
-/* =============================================== */
 
 .container {
   max-width: 1200px;
@@ -112,10 +98,6 @@ a:hover {
   width: 100%;
   object-fit: cover;
 }
-
-/* =============================================== */
-/* 4. COMPONENTES (Header, Menu, Main, Footer)     */
-/* =============================================== */
 
 /* --- Header --- */
 .header {
@@ -247,10 +229,6 @@ main, .featured {
 }
 .footer-bottom p { margin: 0; }
 
-/* =============================================== */
-/* 5. RESPONSIVE DESIGN (Media Queries)            */
-/* =============================================== */
-
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
@@ -294,12 +272,7 @@ main, .featured {
   .social-icons { justify-content: center; }
 }
 
-/* =============================================== */
-/* 🌙 Dark Mode                                  */
-/* =============================================== */
-
 body.dark-mode {
-  /* 1. Redefinimos la paleta de colores */
   --color-bg: #121212;
   --color-surface: #1e1e1e;
   --color-text: #f1f1f1;
@@ -312,9 +285,8 @@ body.dark-mode {
   --color-shadow-hover: rgba(0, 0, 0, 0.3);
 }
 
-/* 2. Pequeños ajustes específicos que las variables no cubren */
 body.dark-mode a {
-  color: #9ad0ff; /* Un azul claro para enlaces mejora la legibilidad */
+  color: #9ad0ff;
 }
 body.dark-mode a:hover {
   color: #d2eaff;
@@ -332,7 +304,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 body.dark-mode .menu a {
-  color: var(--color-text); /* Aseguramos que los links del menú también cambien */
+  color: var(--color-text);
 }
 
 body.dark-mode .menu a:hover,
