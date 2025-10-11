@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
   @Input() city: string = '';
-  private apiKey = '7123295ea9b8f427251391d9be545c4b';
+  private apiKey = 'Your_API_KEY';
 
   weather = signal<any>(null);
 
