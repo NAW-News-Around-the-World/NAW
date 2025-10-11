@@ -12,7 +12,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  // Obtener datos de clima
   getWeather(city: string): Observable<any> {
     return this.http.get<any>(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`
