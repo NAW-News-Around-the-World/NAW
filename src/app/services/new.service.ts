@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private key = 'b5ce465852e843759fde9f1fdfa71e52';
+  private key = 'YOUR_API_KEY';
   private apiUrl = 'https://newsapi.org/v2/everything?q=world&sortBy=publishedAt&language=en';
   private apiUrlEs = 'https://newsapi.org/v2/everything?q=españa&sortBy=publishedAt';
 
