@@ -4,7 +4,7 @@ import { LanguageService } from './language.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private apiKey = 'b5ce465852e843759fde9f1fdfa71e52';
+  private apiKey = 'Your_NewsAPI_Key_Here';
   private apiUrl = 'https://newsapi.org/v2/everything?q=world&sortBy=publishedAt';
   
   news = signal<any[]>([]);
