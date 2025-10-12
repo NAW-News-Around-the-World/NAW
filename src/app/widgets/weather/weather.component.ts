@@ -46,7 +46,6 @@ export class WeatherComponent {
 
   mapUrl: string | null = null;
 
-  // Buscar ciudad y guardar datos en signal
   searchCity(city: string) {
     if (!city || city.trim() === '') {
       console.warn('⚠️ Please enter a city name before searching');

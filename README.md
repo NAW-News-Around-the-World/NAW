@@ -13,46 +13,46 @@ A modern, high-performance web application to stay up-to-date with the latest gl
 
 ### 🎯 Key Features
 
-* 📰 **Featured News**: Shows the 4 latest news articles in a special section
-* 🌐 **Global Coverage**: News from around the world sorted by publication date
-* 🌍 **Multilingual**: Support for English and Spanish with separate routes
-* 📱 **Fully Responsive**: Adaptive design working perfectly on all devices
-* ⚡ **Optimized Performance**: Server-Side Rendering (SSR) for ultra-fast loading
-* 🔄 **Real-Time Data**: Automatic updates from the NewsAPI
-* 🌙 **Dark Mode**: Toggle between light and dark themes with localStorage persistence
-* 🎨 **Modern UI**: Clean, professional design using Angular Material
-* 📄 **Smart Pagination**: Progressive news loading with a "Load More" button
-* 🔍 **SEO Optimized**: Meta tags and structure optimized for search engines
+- 📰 **Featured News**: Shows the 4 latest news articles in a special section
+- 🌐 **Global Coverage**: News from around the world sorted by publication date
+- 🌍 **Multilingual**: Support for English and Spanish with separate routes
+- 📱 **Fully Responsive**: Adaptive design working perfectly on all devices
+- ⚡ **Optimized Performance**: Server-Side Rendering (SSR) for ultra-fast loading
+- 🔄 **Real-Time Data**: Automatic updates from the NewsAPI
+- 🌙 **Dark Mode**: Toggle between light and dark themes with localStorage persistence
+- 🎨 **Modern UI**: Clean, professional design using Angular Material
+- 📄 **Smart Pagination**: Progressive news loading with a "Load More" button
+- 🔍 **SEO Optimized**: Meta tags and structure optimized for search engines
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 
-* **Framework**: Angular 20 (Standalone Components)
-* **Language**: TypeScript 5.9
-* **Styles**: SCSS with custom CSS variables
-* **UI Components**: Angular Material 20
-* **State Management**: Angular Signals (reactive)
-* **Routing**: Angular Router with lazy loading
+- **Framework**: Angular 20 (Standalone Components)
+- **Language**: TypeScript 5.9
+- **Styles**: SCSS with custom CSS variables
+- **UI Components**: Angular Material 20
+- **State Management**: Angular Signals (reactive)
+- **Routing**: Angular Router with lazy loading
 
 ### Backend & Rendering
 
-* **SSR**: Angular Universal (Angular SSR)
-* **Server**: Express.js 5.1
-* **Build**: Angular CLI with optimizations
+- **SSR**: Angular Universal (Angular SSR)
+- **Server**: Express.js 5.1
+- **Build**: Angular CLI with optimizations
 
 ### APIs & Services
 
-* **News API**: NewsAPI.org for real-time news
-* **HTTP Client**: Angular HttpClient with interceptors
-* **Storage**: localStorage for user preferences
+- **News API**: NewsAPI.org for real-time news
+- **HTTP Client**: Angular HttpClient with interceptors
+- **Storage**: localStorage for user preferences
 
 ### Development Tools
 
-* **Testing**: Jasmine + Karma
-* **Linting**: Prettier with custom configuration
-* **Type Checking**: TypeScript strict mode
-* **Package Manager**: npm
+- **Testing**: Jasmine + Karma
+- **Linting**: Prettier with custom configuration
+- **Type Checking**: TypeScript strict mode
+- **Package Manager**: npm
 
 ## 📦 Dependencies
 
@@ -97,10 +97,10 @@ A modern, high-performance web application to stay up-to-date with the latest gl
 
 Before getting started, make sure you have installed:
 
-* **Node.js** (v18 or higher) - [Download](https://nodejs.org/)
-* **npm** (included with Node.js)
-* **Git** - [Download](https://git-scm.com/)
-* A **NewsAPI key** (free at [newsapi.org](https://newsapi.org/))
+- **Node.js** (v18 or higher) - [Download](https://nodejs.org/)
+- **npm** (included with Node.js)
+- **Git** - [Download](https://git-scm.com/)
+- A **NewsAPI key** (free at [newsapi.org](https://newsapi.org/))
 
 ## 🚀 Installation and Setup
 
@@ -136,6 +136,7 @@ npm install
    ```bash
    NEWS_API_KEY=your_api_key_here
    ```
+
 2. Modify the service to use the environment variable:
 
    ```typescript
@@ -253,24 +254,24 @@ NAW/
 
 The project uses Angular Material with a custom theme. Styles are located at:
 
-* `src/styles.scss` - Global variables and base theme
-* `src/app/app.scss` - Application-specific styles
+- `src/styles.scss` - Global variables and base theme
+- `src/app/app.scss` - Application-specific styles
 
 ### SSR Configuration
 
 Server-Side Rendering configuration is located at:
 
-* `src/app/app.config.server.ts` - Server configuration
-* `src/server.ts` - Custom Express server
-* `angular.json` - Build configuration for SSR
+- `src/app/app.config.server.ts` - Server configuration
+- `src/server.ts` - Custom Express server
+- `angular.json` - Build configuration for SSR
 
 ### Routing
 
 Routes are configured in `src/app/app.routes.ts`:
 
-* `/` → Redirects to `/home`
-* `/home` → Home page (English)
-* `/home/es` → Home page (Spanish)
+- `/` → Redirects to `/home`
+- `/home` → Home page (English)
+- `/home/es` → Home page (Spanish)
 
 ## 📦 Deployment
 
@@ -369,16 +370,16 @@ npm run e2e
 
 ## 🚀 Roadmap & Future Improvements
 
-* [ ] **Weather Widget**: Integration with weather API
-* [ ] **News Categories**: Filtering by categories (tech, sports, etc.)
-* [ ] **Search**: News search functionality
-* [ ] **Favorites**: Save favorite news
-* [ ] **Push Notifications**: Alerts for important news
-* [ ] **PWA**: Convert to Progressive Web App
-* [ ] **E2E Testing**: Implement Cypress or Playwright
-* [ ] **Internationalization**: Support for more languages
-* [ ] **Caching**: Advanced caching strategies
-* [ ] **Analytics**: Google Analytics integration
+- [ ] **Weather Widget**: Integration with weather API
+- [ ] **News Categories**: Filtering by categories (tech, sports, etc.)
+- [ ] **Search**: News search functionality
+- [ ] **Favorites**: Save favorite news
+- [ ] **Push Notifications**: Alerts for important news
+- [ ] **PWA**: Convert to Progressive Web App
+- [ ] **E2E Testing**: Implement Cypress or Playwright
+- [ ] **Internationalization**: Support for more languages
+- [ ] **Caching**: Advanced caching strategies
+- [ ] **Analytics**: Google Analytics integration
 
 ## 🤝 Contributing
 
@@ -392,10 +393,10 @@ Contributions are welcome! To contribute:
 
 ### Contribution Guidelines
 
-* Follow established code conventions
-* Add tests for new features
-* Update documentation when necessary
-* Use descriptive commits following [Conventional Commits](https://www.conventionalcommits.org/)
+- Follow established code conventions
+- Add tests for new features
+- Update documentation when necessary
+- Use descriptive commits following [Conventional Commits](https://www.conventionalcommits.org/)
 
 ## 🐛 Reporting Bugs
 
@@ -404,10 +405,10 @@ If you find a bug:
 1. Check if it has already been reported in [Issues](https://github.com/NAW-News-Around-the-World/NAW/issues)
 2. Create a new issue including:
 
-   * Detailed description of the problem
-   * Steps to reproduce
-   * Screenshots (if applicable)
-   * Environment information (browser, OS, etc.)
+   - Detailed description of the problem
+   - Steps to reproduce
+   - Screenshots (if applicable)
+   - Environment information (browser, OS, etc.)
 
 ## 📄 License
 
@@ -415,6 +416,6 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 
 ## 👥 Contributors
 
-* **Izhan Lara** - *Initial development* - [GitHub](https://github.com/izhanlaraagarcia)
+- **Izhan Lara** - _Initial development_ - [GitHub](https://github.com/izhanlaraagarcia)
 
 ---

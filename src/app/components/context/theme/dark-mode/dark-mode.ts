@@ -19,12 +19,19 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   template: `
     <button mat-icon-button (click)="toggleDarkMode()" matTooltip="Change theme">
       @if (mode() === 'dark') {
-        <mat-icon>light_mode</mat-icon>
+        <mat-icon class="theme-icon">☀️</mat-icon>
       } @else {
-        <mat-icon>dark_mode</mat-icon>
+        <mat-icon class="theme-icon">🌙</mat-icon>
       }
     </button>
   `,
+  styles: [
+    `
+      .theme-icon {
+        font-size: 18px;
+      }
+    `,
+  ],
 })
 export class DarkMode implements OnInit, OnDestroy {
   /**

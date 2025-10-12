@@ -8,13 +8,13 @@
       <a routerLink="/home" routerLinkActive="active">Inicio</a>
     </li>
     <li>
-      <a routerLink="/home/es" routerLinkActive="active">Noticias en Español</a>
-    </li>
-    <li>
       <a routerLink="/weather" routerLinkActive="active">Weather</a>
     </li>
     <li>
       <app-dark-mode></app-dark-mode>
+    </li>
+    <li>
+      <app-change-lang (languageChange)="onLanguageChange($event)"></app-change-lang>
     </li>
   </ul>
 </div>

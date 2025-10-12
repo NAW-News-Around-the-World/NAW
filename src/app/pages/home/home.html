@@ -1,4 +1,4 @@
-<section class="featured" *ngIf="featured().length > 0">
+<section id="featured" class="featured" *ngIf="featured().length > 0">
   <h2>📰 Featured (Global)</h2>
   <div class="featured-container">
     <div *ngFor="let article of featured()" class="featured-article">
@@ -6,7 +6,9 @@
       <div class="featured-content">
         <h3>{{ article.title }}</h3>
         <p>{{ article.description }}</p>
-        <a [href]="article.url" target="_blank" rel="noopener noreferrer"> Leer más </a>
+        <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+          Read the full article
+        </a>
       </div>
     </div>
   </div>
@@ -14,12 +16,12 @@
 
 @defer () {
 <main>
-  <h2>🌐 Latest News (Global)</h2>
+  <h2 id="last-news">🌐 Latest News (Global)</h2>
   <div class="article-container">
     <div *ngFor="let article of general()" class="article">
       <img [src]="article.urlToImage" alt="Article image" />
       <h2>{{ article.title }}</h2>
-      <p>{{ article.content }}</p>
+      <p>{{ article.description }}</p>
       <a [href]="article.url" target="_blank" rel="noopener noreferrer"> Read the full article </a>
       <div class="meta">
         <p>{{ article.publishedAt | date : 'medium' }}</p>

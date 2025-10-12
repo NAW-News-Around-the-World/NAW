@@ -9,8 +9,9 @@
   --color-border: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-hover: rgba(0, 0, 0, 0.15);
-  --font-serif: 'Times New Roman', 'Georgia', serif;
-  --font-sans: 'Helvetica', 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --preferred-color-scheme: auto;
 
 }
 
