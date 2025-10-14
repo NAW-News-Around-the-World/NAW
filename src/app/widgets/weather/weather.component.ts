@@ -9,34 +9,33 @@ import { WeatherService } from '../../services/weather.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-  <section class="weather-section" id="weather-section">
-    <form>
-      <input
-        type="text"
-        placeholder="Enter a city"
-        [(ngModel)]="weatherService.city"
-        name="city"
-        class="form-control"
-      />
-      <button
-        type="button"
-        (click)="searchCity(weatherService.city)"
-        class="btn btn-primary"
-        id="btn-weather-search"
-        
-      >
-        Search
-      </button>
-    </form>
+    <section class="weather-section" id="weather-section">
+      <form>
+        <input
+          type="text"
+          placeholder="Enter a city"
+          [(ngModel)]="weatherService.city"
+          name="city"
+          class="form-control"
+        />
+        <button
+          type="button"
+          (click)="searchCity(weatherService.city)"
+          class="btn btn-primary"
+          id="btn-weather-search"
+        >
+          Search
+        </button>
+      </form>
 
-    <div *ngIf="weatherService.weather()" class="weather-info" id="weather-info">
-      <h2>Weather in {{ weatherService.weather().name }}</h2>
-      <p>Temperature: {{ weatherService.weather().main.temp - 273.15 | number : '1.0-0' }} °C</p>
-      <p>Condition: {{ weatherService.weather().weather[0].description }}</p>
-      <p>Humidity: {{ weatherService.weather().main.humidity }}%</p>
-      <p>Wind Speed: {{ weatherService.weather().wind.speed }} m/s</p>
+      <div *ngIf="weatherService.weather()" class="weather-info" id="weather-info">
+        <h2>Weather in {{ weatherService.weather().name }}</h2>
+        <p>Temperature: {{ weatherService.weather().main.temp - 273.15 | number : '1.0-0' }} °C</p>
+        <p>Condition: {{ weatherService.weather().weather[0].description }}</p>
+        <p>Humidity: {{ weatherService.weather().main.humidity }}%</p>
+        <p>Wind Speed: {{ weatherService.weather().wind.speed }} m/s</p>
       </div>
-  </section>
+    </section>
   `,
   styleUrls: ['weather.scss'],
 })

@@ -1,23 +1,38 @@
-import { Component, signal, ViewEncapsulation } from '@angular/core';
-import { Home } from './pages/home/home';
-import { RouterOutlet } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import 'zone.js';
 import { Footer } from './pages/footer/footer';
 import { Menu } from './components/menu/menu';
 
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgModel } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Menu],
-  standalone: true,
-  providers: [],
+  imports: [Menu, Footer, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
-  encapsulation: ViewEncapsulation.None
-
+  styleUrls: ['./app.scss'],
 })
-
 export class App {
-  protected readonly title = signal('NAW');
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.translate.addLangs(['en', 'es']);
+    this.translate.setDefaultLang('en');
+
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLang = localStorage.getItem('lang') || 'en';
+      this.translate.use(savedLang);
+    } else {
+      this.translate.use('en');
+    }
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('lang', lang);
+    }
+  }
 }

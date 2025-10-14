@@ -19,9 +19,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   template: `
     <button mat-icon-button (click)="toggleDarkMode()" matTooltip="Change theme">
       @if (mode() === 'dark') {
-        <mat-icon class="theme-icon">☀️</mat-icon>
+      <mat-icon class="theme-icon">☀️</mat-icon>
       } @else {
-        <mat-icon class="theme-icon">🌙</mat-icon>
+      <mat-icon class="theme-icon">🌙</mat-icon>
       }
     </button>
   `,
@@ -32,6 +32,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       }
     `,
   ],
+  styleUrls: ['../../../../app.scss'],
 })
 export class DarkMode implements OnInit, OnDestroy {
   /**

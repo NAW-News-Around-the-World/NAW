@@ -5,7 +5,9 @@
   </button>
   <ul [class.active]="isMenuOpen">
     <li>
-      <a routerLink="/home" routerLinkActive="active">Inicio</a>
+      <a routerLink="/home" routerLinkActive="active" (click)="onLanguageChange(currentLang)">
+        {{ 'menu.home' | translate }}
+      </a>
     </li>
     <li>
       <a routerLink="/weather" routerLinkActive="active">Weather</a>
