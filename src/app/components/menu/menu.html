@@ -5,13 +5,18 @@
   </button>
   <ul [class.active]="isMenuOpen">
     <li>
-      <a routerLink="/home" routerLinkActive="active">Inicio</a>
+      <a routerLink="/home" routerLinkActive="active" (click)="onLanguageChange(currentLang)">
+        {{ 'menu.home' | translate }}
+      </a>
     </li>
     <li>
-      <a routerLink="/home/es" routerLinkActive="active">Noticias en Español</a>
+      <a routerLink="/weather" routerLinkActive="active">Weather</a>
     </li>
     <li>
       <app-dark-mode></app-dark-mode>
+    </li>
+    <li>
+      <app-change-lang (languageChange)="onLanguageChange($event)"></app-change-lang>
     </li>
   </ul>
 </div>

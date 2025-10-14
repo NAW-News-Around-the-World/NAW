@@ -1,29 +1,41 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, effect, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LanguageService } from './language.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private key = 'b5ce465852e843759fde9f1fdfa71e52';
-  private apiUrl = 'https://newsapi.org/v2/everything?q=world&sortBy=publishedAt&language=en';
-  private apiUrlEs = 'https://newsapi.org/v2/everything?q=españa&sortBy=publishedAt';
+  private apiKey = 'YOUR_API_KEY';
+  private apiUrl = 'https://newsapi.org/v2/everything?q=world&sortBy=publishedAt';
 
   news = signal<any[]>([]);
-  newsEs = signal<any[]>([]);
+  isLoading = signal(false);
+  error = signal<string | null>(null);
 
+  private http = inject(HttpClient);
+  langService = inject(LanguageService);
 
-  constructor(private http: HttpClient) {}
-
-  getNews(): void {
-    this.http.get<any>(`${this.apiUrl}&apiKey=${this.key}`).subscribe({
-      next: (data) => this.news.set(data.articles),
-      error: (err) => console.error('Error cargando noticias:', err),
+  constructor() {
+    effect(() => {
+      const lang = this.langService.lang();
+      this.getNews(lang);
     });
   }
 
-  getNewsEs(): void {
-    this.http.get<any>(`${this.apiUrlEs}&apiKey=${this.key}`).subscribe({
-      next: (data) => this.newsEs.set(data.articles),
-      error: (err) => console.error('Error cargando noticias (ES):', err),
+  getNews(language: string = 'en'): void {
+    this.isLoading.set(true);
+    this.error.set(null);
+
+    const url = `${this.apiUrl}&language=${language}&apiKey=${this.apiKey}`;
+
+    this.http.get<any>(url).subscribe({
+      next: (data) => this.news.set(data.articles),
+      error: (err) => {
+        console.error('Error loading news:', err);
+        this.error.set('Failed to load news.');
+      },
+      complete: () => {
+        this.isLoading.set(false);
+      },
     });
   }
 }
