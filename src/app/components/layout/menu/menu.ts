@@ -1,9 +1,9 @@
 // src/app/components/menu/menu
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DarkMode } from '../context/theme/dark-mode/dark-mode';
-import { ChangeLangComponent } from '../context/language/changeLang.component';
-import { LanguageService } from '../../services/language.service';
+import { DarkMode } from '../../context/theme/dark-mode/dark-mode';
+import { ChangeLangComponent } from '../../context/language/changeLang.component';
+import { LanguageService } from '../../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -12,11 +12,12 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   providers: [],
   templateUrl: './menu.html',
-  styleUrl: '../../app.scss',
+  styleUrl: '../../../app.scss',
 })
 export class Menu {
   isMenuOpen = false;
   langService = inject(LanguageService);
+  openDropdown: string | null = null;
 
   constructor(private languageService: LanguageService) {}
 
@@ -30,5 +31,8 @@ export class Menu {
 
   get currentLang(): string {
     return this.langService.lang();
+  }
+  toggleDropdown(dropdown: string) {
+    this.openDropdown = this.openDropdown === dropdown ? null : dropdown;
   }
 }

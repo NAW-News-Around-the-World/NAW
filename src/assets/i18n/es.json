@@ -2,6 +2,61 @@
   "menu": {
     "home": "Inicio",
     "about": "Acerca de",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "weather": "El Tiempo",
+    "news": "Noticias",
+    "sports": "Deportes",
+    "tech": "Tecnología",
+    "gaming": "Gaming",
+    "finance": "Finanzas",
+    "culture": "Cultura",
+    "lifestyle": "Estilo de vida",
+
+    "sub": {
+      "national": "Nacional",
+      "international": "Internacional",
+      "politics": "Política",
+      "society": "Sociedad",
+
+      "football": "Fútbol",
+      "basketball": "Baloncesto",
+      "motorsport": "Motor",
+      "tennis": "Tenis",
+      "olympics": "Olimpismo",
+
+      "innovation": "Innovación",
+      "ai": "Inteligencia Artificial",
+      "gadgets": "Gadgets",
+      "software": "Software",
+      "reviews": "Análisis",
+
+      "pc": "PC",
+      "consoles": "Consolas",
+      "mobile": "Móvil",
+      "esports": "eSports",
+      "indie": "Indie",
+
+      "economy": "Economía",
+      "markets": "Mercados",
+      "companies": "Empresas",
+      "crypto": "Criptomonedas",
+
+      "art": "Arte",
+      "music": "Música",
+      "cinema": "Cine",
+      "books": "Libros",
+
+      "health": "Salud",
+      "travel": "Viajes",
+      "fashion": "Moda",
+      "food": "Gastronomía"
+    }
+  },
+    "homePage": {
+      "H2Title_featured": "Destacados (Global)",
+      "H2Title_global": "Ultimas Noticias (Global)",
+      "ReadMore": "Leer el artículo completo",
+      "btnLoadMore": "Cargar más"
+    }
   }
-}
+

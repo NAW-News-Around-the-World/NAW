@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-footer',
+  imports: [],
+  template: `
+    @defer () {
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h3>NAW</h3>
+          <p>News Around the World 🌍</p>
+        </div>
+
+        <div class="footer-right">
+          <h4>Follow us:</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    }
+  `,
+  styleUrls: ['../../../app.scss'],
+})
+export class Footer {}
