@@ -2,6 +2,60 @@
   "menu": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "weather": "Weather",
+    "news": "News",
+    "sports": "Sports",
+    "tech": "Technology",
+    "gaming": "Gaming",
+    "finance": "Finance",
+    "culture": "Culture",
+    "lifestyle": "Lifestyle",
+
+    "sub": {
+      "national": "National",
+      "international": "International",
+      "politics": "Politics",
+      "society": "Society",
+
+      "football": "Football",
+      "basketball": "Basketball",
+      "motorsport": "Motorsport",
+      "tennis": "Tennis",
+      "olympics": "Olympics",
+
+      "innovation": "Innovation",
+      "ai": "Artificial Intelligence",
+      "gadgets": "Gadgets",
+      "software": "Software",
+      "reviews": "Reviews",
+
+      "pc": "PC",
+      "consoles": "Consoles",
+      "mobile": "Mobile",
+      "esports": "eSports",
+      "indie": "Indie",
+
+      "economy": "Economy",
+      "markets": "Markets",
+      "companies": "Companies",
+      "crypto": "Cryptocurrency",
+
+      "art": "Art",
+      "music": "Music",
+      "cinema": "Cinema",
+      "books": "Books",
+
+      "health": "Health",
+      "travel": "Travel",
+      "fashion": "Fashion",
+      "food": "Food"
+    }
+  },
+    "homePage": {
+      "H2Title_featured": "Featured (Global)",
+      "H2Title_global": "Latest News (Global)",
+      "ReadMore": "Read the full article",
+      "btnLoadMore": "Load More"
+    }
   }
-}

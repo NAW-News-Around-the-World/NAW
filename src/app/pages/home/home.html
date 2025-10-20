@@ -1,5 +1,5 @@
 <section id="featured" class="featured" *ngIf="featured().length > 0">
-  <h2>📰 Featured (Global)</h2>
+  <h2>📰 {{ "homePage.H2Title_featured" | translate }}</h2>
   <div class="featured-container">
     <div *ngFor="let article of featured()" class="featured-article">
       <img [src]="article.urlToImage" alt="Noticia destacada" />
@@ -7,28 +7,26 @@
         <h3>{{ article.title }}</h3>
         <p>{{ article.description }}</p>
         <a [href]="article.url" target="_blank" rel="noopener noreferrer">
-          Read the full article
+          {{ "homePage.ReadMore" | translate}}
         </a>
       </div>
     </div>
   </div>
 </section>
 
-@defer () {
 <main>
-  <h2 id="last-news">🌐 Latest News (Global)</h2>
+  <h2 id="last-news">🌐 {{ "homePage.H2Title_global" | translate}}</h2>
   <div class="article-container">
     <div *ngFor="let article of general()" class="article">
       <img [src]="article.urlToImage" alt="Article image" />
       <h2>{{ article.title }}</h2>
       <p>{{ article.description }}</p>
-      <a [href]="article.url" target="_blank" rel="noopener noreferrer"> Read the full article </a>
+      <a [href]="article.url" target="_blank" rel="noopener noreferrer"> {{ "homePage.ReadMore" | translate}} </a>
       <div class="meta">
         <p>{{ article.publishedAt | date : 'medium' }}</p>
         <p>{{ article.author }}</p>
       </div>
     </div>
   </div>
-  <button (click)="loadMore()" *ngIf="pageSize() < allNews.length" class="load-more">More</button>
+  <button (click)="loadMore()" *ngIf="pageSize() < allNews.length" class="load-more">{{ "homePage.btnLoadMore"  | translate}}</button>
 </main>
-}

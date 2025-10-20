@@ -1,0 +1,108 @@
+<div class="menu">
+  <button 
+    class="menu-toggle" 
+    type="button" 
+    aria-label="Toggle menu" 
+    (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <ul [class.active]="isMenuOpen">
+    <li>
+      <a routerLink="/home" routerLinkActive="active" (click)="onLanguageChange(currentLang); toggleMenu()">
+        {{ 'menu.home' | translate }}
+      </a>
+    </li>
+    <li class="dropdown" [class.open]="openDropdown === 'news'">
+      <a (click)="toggleDropdown('news')">
+        {{ 'menu.news' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'news'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/national" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.national' | translate }}</a></li>
+        <li><a routerLink="/international" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.international' | translate }}</a></li>
+        <li><a routerLink="/politics" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.politics' | translate }}</a></li>
+        <li><a routerLink="/society" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.society' | translate }}</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" [class.open]="openDropdown === 'sports'">
+      <a (click)="toggleDropdown('sports')">
+        {{ 'menu.sports' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'sports'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/football" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.football' | translate }}</a></li>
+        <li><a routerLink="/basketball" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.basketball' | translate }}</a></li>
+        <li><a routerLink="/motorsport" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.motorsport' | translate }}</a></li>
+        <li><a routerLink="/tennis" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.tennis' | translate }}</a></li>
+        <li><a routerLink="/olympics" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.olympics' | translate }}</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown" [class.open]="openDropdown === 'tech'">
+      <a (click)="toggleDropdown('tech')">
+        {{ 'menu.tech' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'tech'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/innovation" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.innovation' | translate }}</a></li>
+        <li><a routerLink="/ai" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.ai' | translate }}</a></li>
+        <li><a routerLink="/gadgets" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.gadgets' | translate }}</a></li>
+        <li><a routerLink="/software" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.software' | translate }}</a></li>
+        <li><a routerLink="/reviews" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.reviews' | translate }}</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown" [class.open]="openDropdown === 'gaming'">
+      <a (click)="toggleDropdown('gaming')">
+        {{ 'menu.gaming' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'gaming'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/pc" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.pc' | translate }}</a></li>
+        <li><a routerLink="/consoles" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.consoles' | translate }}</a></li>
+        <li><a routerLink="/mobile" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.mobile' | translate }}</a></li>
+        <li><a routerLink="/esports" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.esports' | translate }}</a></li>
+        <li><a routerLink="/indie" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.indie' | translate }}</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown" [class.open]="openDropdown === 'finance'">
+      <a (click)="toggleDropdown('finance')">
+        {{ 'menu.finance' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'finance'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/economy" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.economy' | translate }}</a></li>
+        <li><a routerLink="/markets" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.markets' | translate }}</a></li>
+        <li><a routerLink="/companies" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.companies' | translate }}</a></li>
+        <li><a routerLink="/crypto" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.crypto' | translate }}</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown" [class.open]="openDropdown === 'culture'">
+      <a (click)="toggleDropdown('culture')">
+        {{ 'menu.culture' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'culture'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/art" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.art' | translate }}</a></li>
+        <li><a routerLink="/music" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.music' | translate }}</a></li>
+        <li><a routerLink="/cinema" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.cinema' | translate }}</a></li>
+        <li><a routerLink="/books" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.books' | translate }}</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown" [class.open]="openDropdown === 'lifestyle'">
+      <a (click)="toggleDropdown('lifestyle')">
+        {{ 'menu.lifestyle' | translate }} <span class="arrow" [class.rotated]="openDropdown === 'lifestyle'"></span>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/health" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.health' | translate }}</a></li>
+        <li><a routerLink="/travel" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.travel' | translate }}</a></li>
+        <li><a routerLink="/fashion" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.fashion' | translate }}</a></li>
+        <li><a routerLink="/food" routerLinkActive="active" (click)="toggleMenu()">{{ 'menu.sub.food' | translate }}</a></li>
+      </ul>
+    </li>
+    <li>
+      <app-dark-mode></app-dark-mode>
+    </li>
+    <li>
+      <app-change-lang (languageChange)="onLanguageChange($event)"></app-change-lang>
+    </li>
+  </ul>
+</div>
